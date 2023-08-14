@@ -1,22 +1,52 @@
 # Introduction to the Heart Disease Predictor
 
 ### Overview
-Cardiovascular diseases (CVDs) are the number 1 cause of death globally, taking an estimated 17.9 million lives each
-year, which accounts for 31% of all deaths worldwide. Four out of 5CVD deaths are due to heart attacks and strokes, and
-one-third of these deaths occur prematurely in people under 70 years of age. Heart failure is a common event caused by
-CVDs and this dataset contains 11 features that can be used to predict a possible heart disease.
+The following notebook chronicles the creation of the Heart Disease Predictor Streamlit app. This notebook is split into various parts: Project Objectives, Methodologies, About the Dataset, Preprocessing, Model Selection, and Streamlit Interface Creation.
 
-People with cardiovascular disease or who are at high cardiovascular risk (due to the presence of one or more risk
-factors such as hypertension, diabetes, hyperlipidaemia or already established disease) need early detection and
-management wherein a machine learning model can be of great help.
+### Project Objectives
+Project Objectives include:
+1. Dataset selection and familiarization
+    
+    - Familiarization with the selected dataset, understanding the features to get project decisions and directions.
 
-Thus, the heart disease predictor was created to be of use for early detection for possible intervention and monitoring.
 
+2. Data Preprocessing and Cleaning, and
+3. Exploratory Data Analysis (EDA) and Data Profiling
+
+   - Clean, enhance, and explore the dataset for improved analysis and insights to ensure the data quality and the consistency. 
+
+
+4. Model Selection
+
+    - Select and optimize the most suitable classification or regression models and enhance the project solution. 
+
+
+5. Model Developement and Evaluation
+
+    - Develop, evaluate, and validate model. Efficient coding practices, and effective evaluation metrics are expected. 
+
+
+6. Model Interpretability and Charts Visualization
+
+    - Enhance model interpretability and visualization through interactive charts, SHAP library, Streamlit interface, and a summary dashboard.
+
+
+7. Deployement and Containerization
+
+    - Deploy and containerize the Streamlit web app using Docker.
+
+   
+### Methodologies
+
+
+### Preprocessing
+
+### Model Selection
 The ML model uses a stacked model with a Random Forest base model, and a Logistic Regressor metamodel, to classify whether
 the user is at risk for Heart Disease or not. The resulting model was then applied to a streamlit interface to allow users 
 to enter their own data for real-time predictions.
 
-The data used for the predictor was trained using the "Heart Failure Prediction Dataset" provided by user fedesoriano.
+### Streamlit Interface
 
 [//]: # ()
 [//]: # (This is a small sample book to give you a feel for how book content is)
@@ -25,7 +55,7 @@ The data used for the predictor was trained using the "Heart Failure Prediction 
 
 [//]: # (It shows off a few of the major file types, as well as some sample content.)
 
-[//]: # (It does not go in-depth into any particular topic - check out [the Jupyter Book documentation]&#40;https://jupyterbook.org&#41;)
+[//]: # (&#40;It does not go in-depth into any particular topic - check out [the Jupyter Book documentation]&#40;https://jupyterbook.org&#41;&#41;)
 
 [//]: # (for more information.)
 

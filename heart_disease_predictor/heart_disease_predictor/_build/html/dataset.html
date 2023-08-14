@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Content with notebooks &#8212; Heart Disease Risk Predictor</title>
+    <title>The Dataset &#8212; Heart Disease Risk Predictor</title>
   
   
   
@@ -61,13 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dataset';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
-    <link rel="prev" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="Methodology" href="methodology.html" />
+    <link rel="prev" title="Introduction to the Heart Disease Predictor" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,11 +157,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="dataset.html">The Dataset</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="methodology.html">Methodology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docstrings.html">Doc Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 
@@ -236,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/areyao/Heart Disease Predictor/issues/new?title=Issue%20on%20page%20%2Fnotebooks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/areyao/Heart Disease Predictor/issues/new?title=Issue%20on%20page%20%2Fdataset.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -266,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/notebooks.ipynb" target="_blank"
+      <li><a href="_sources/dataset.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -348,7 +345,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Content with notebooks</h1>
+    <h1>The Dataset</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -358,9 +355,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-notebooks">Markdown + notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown">MyST markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">Code blocks and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-columns">Feature Columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-column">Target Column</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source">Source</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-example">Dataset Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#age">Age</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sex">Sex</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cholesterol">Cholesterol</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blood-pressure">Blood Pressure</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -372,83 +376,242 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="content-with-notebooks">
-<h1>Content with notebooks<a class="headerlink" href="#content-with-notebooks" title="Permalink to this heading">#</a></h1>
-<p>You can also create content with Jupyter Notebooks. This means that you can include
-code blocks and their outputs in your book.</p>
-<section id="markdown-notebooks">
-<h2>Markdown + notebooks<a class="headerlink" href="#markdown-notebooks" title="Permalink to this heading">#</a></h2>
-<p>As it is markdown, you can embed images, HTML, etc into your posts!</p>
-<p><img alt="" src="https://myst-parser.readthedocs.io/en/latest/_static/logo-wide.svg" /></p>
-<p>You can also <span class="math notranslate nohighlight">\(add_{math}\)</span> and</p>
-<div class="math notranslate nohighlight">
-\[
-math^{blocks}
-\]</div>
-<p>or</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\mbox{mean} la_{tex} \\ \\
-math blocks
-\end{aligned}
-\end{split}\]</div>
-<p>But make sure you $Escape $your $dollar signs $you want to keep!</p>
+  <section id="the-dataset">
+<h1>The Dataset<a class="headerlink" href="#the-dataset" title="Permalink to this heading">#</a></h1>
+<p>Cardiovascular ailments (CVDs) stand as the primary culprit behind global mortality, claiming approximately 17.9 million lives annually, translating to 31% of all worldwide deaths. Within this statistic, four out of every five CVD-related deaths stem from heart attacks and strokes, with a troubling one-third of these fatalities occurring prematurely among individuals under the age of 70. Notably, heart failure emerges as a frequent outcome linked to CVDs. Enclosed within this dataset are 11 distinctive attributes that hold the potential to forecast the onset of heart disease.</p>
+<p>Individuals grappling with cardiovascular disorders or those situated within the high-risk bracket (owing to factors such as hypertension, diabetes, hyperlipidemia, or preexisting conditions) necessitate early identification and effective management. In this pursuit, the deployment of a machine learning model stands poised as a valuable asset.</p>
+<p>Thus, the heart disease predictor was created to be of use for early detection for possible intervention and monitoring.</p>
+<p>The data used for the predictor was trained using the <a class="reference external" href="https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction">“Heart Failure Prediction Dataset”</a> provided by user fedesoriano.</p>
+<section id="feature-columns">
+<h2>Feature Columns<a class="headerlink" href="#feature-columns" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Age: age of the patient [years] (Discrete)</p></li>
+<li><p>Sex: sex of the patient [M: Male, F: Female] (Categorical)</p></li>
+<li><p>ChestPainType: chest pain type [TA: Typical Angina, ATA: Atypical Angina, NAP: Non-Anginal Pain, ASY: Asymptomatic] (Categorical)</p></li>
+<li><p>RestingBP: resting blood pressure [mm Hg] (Continuous)</p></li>
+<li><p>Cholesterol: serum cholesterol [mm/dl] (Continuous)</p></li>
+<li><p>FastingBS: fasting blood sugar [1: if FastingBS &gt; 120 mg/dl, 0: otherwise] (Categorical ; Boolean)</p></li>
+<li><p>RestingECG: resting electrocardiogram results [Normal: Normal, ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of &gt; 0.05 mV), LVH: showing probable or definite left ventricular hypertrophy by Estes’ criteria] (Categorical)</p></li>
+<li><p>MaxHR: maximum heart rate achieved [Numeric value between 60 and 202] (Discrete)</p></li>
+<li><p>ExerciseAngina: exercise-induced angina [Y: Yes, N: No] (Categorical ; Boolean)</p></li>
+<li><p>Oldpeak: oldpeak = ST [Numeric value measured in depression] (Continuous)</p></li>
+<li><p>ST_Slope: the slope of the peak exercise ST segment [Up: upsloping, Flat: flat, Down: downsloping] (Categorical)</p></li>
+</ol>
 </section>
-<section id="myst-markdown">
-<h2>MyST markdown<a class="headerlink" href="#myst-markdown" title="Permalink to this heading">#</a></h2>
-<p>MyST markdown works in Jupyter Notebooks as well. For more information about MyST markdown, check
-out <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST guide in Jupyter Book</a>,
-or see <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">the MyST markdown documentation</a>.</p>
+<section id="target-column">
+<h2>Target Column<a class="headerlink" href="#target-column" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>HeartDisease: output class [1: heart disease, 0: Normal] (Categorical ; Boolean)</p></li>
+</ol>
 </section>
-<section id="code-blocks-and-outputs">
-<h2>Code blocks and outputs<a class="headerlink" href="#code-blocks-and-outputs" title="Permalink to this heading">#</a></h2>
-<p>Jupyter Book will also embed your code blocks and output in your book.
-For example, here’s some sample Matplotlib code:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span><span class="p">,</span> <span class="n">cycler</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
-</pre></div>
+<section id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this heading">#</a></h2>
+<p>This dataset was created by combining different datasets already available independently but not combined before. In this dataset, 5 heart datasets are combined over 11 common features which makes it the largest heart disease dataset available so far for research purposes. The five datasets used for its curation are:</p>
+<ul class="simple">
+<li><p>Cleveland: 303 observations</p></li>
+<li><p>Hungarian: 294 observations</p></li>
+<li><p>Switzerland: 123 observations</p></li>
+<li><p>Long Beach VA: 200 observations</p></li>
+<li><p>Stalog (Heart) Data Set: 270 observations</p></li>
+</ul>
+<p>With a total of 1190 observations, there were 272 duplicated observations.</p>
+<p>Final dataset: 918 observations</p>
+<p>Every dataset used can be found under the Index of heart disease datasets from <a class="reference external" href="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/">UCI Machine Learning Repository</a></p>
+<div class="cell tag_remove-input docutils container">
 </div>
+<div class="cell tag_remove-input docutils container">
 </div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<section id="dataset-example">
+<h3>Dataset Example<a class="headerlink" href="#dataset-example" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x1fed486a590&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fixing random state for reproducibility</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">ii</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">coolwarm</span>
-<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycler</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)))</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-
-<span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span>
-<span class="n">custom_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">0.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">.5</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">1.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)]</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">custom_lines</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Cold&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> <span class="s1">&#39;Hot&#39;</span><span class="p">]);</span>
-</pre></div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>ChestPainType</th>
+      <th>RestingBP</th>
+      <th>Cholesterol</th>
+      <th>FastingBS</th>
+      <th>RestingECG</th>
+      <th>MaxHR</th>
+      <th>ExerciseAngina</th>
+      <th>Oldpeak</th>
+      <th>ST_Slope</th>
+      <th>HeartDisease</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>40</td>
+      <td>M</td>
+      <td>ATA</td>
+      <td>140</td>
+      <td>289</td>
+      <td>0</td>
+      <td>Normal</td>
+      <td>172</td>
+      <td>N</td>
+      <td>0.0</td>
+      <td>Up</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>49</td>
+      <td>F</td>
+      <td>NAP</td>
+      <td>160</td>
+      <td>180</td>
+      <td>0</td>
+      <td>Normal</td>
+      <td>156</td>
+      <td>N</td>
+      <td>1.0</td>
+      <td>Flat</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>37</td>
+      <td>M</td>
+      <td>ATA</td>
+      <td>130</td>
+      <td>283</td>
+      <td>0</td>
+      <td>ST</td>
+      <td>98</td>
+      <td>N</td>
+      <td>0.0</td>
+      <td>Up</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>48</td>
+      <td>F</td>
+      <td>ASY</td>
+      <td>138</td>
+      <td>214</td>
+      <td>0</td>
+      <td>Normal</td>
+      <td>108</td>
+      <td>Y</td>
+      <td>1.5</td>
+      <td>Flat</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>54</td>
+      <td>M</td>
+      <td>NAP</td>
+      <td>150</td>
+      <td>195</td>
+      <td>0</td>
+      <td>Normal</td>
+      <td>122</td>
+      <td>N</td>
+      <td>0.0</td>
+      <td>Up</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
+<div class="cell tag_remove-input docutils container">
 </div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+</section>
+<section id="age">
+<h3>Age<a class="headerlink" href="#age" title="Permalink to this heading">#</a></h3>
+<p>As age is considered to be a general measure of health, we can delve into this feature and obtain various insights. We can further ages by classifying them within the 5 year age group classification to easily identify
+which groups are more prone to heart failures.</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/10e4426d9a98b8b32d6c7c558b9983b6bfbf3f7b3422996bacff632594cdfad8.png" src="_images/10e4426d9a98b8b32d6c7c558b9983b6bfbf3f7b3422996bacff632594cdfad8.png" />
+<img alt="_images/e7d9aab1123da218f5c0ae06dd8ef54fbd2ba123ef6109482842c4ed753502e0.png" src="_images/e7d9aab1123da218f5c0ae06dd8ef54fbd2ba123ef6109482842c4ed753502e0.png" />
 </div>
 </div>
-<p>There is a lot more that you can do with outputs (such as including interactive outputs)
-with your book. For more information about this, see <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a></p>
+<p>Through this classification, we can see that those with the most instances of Heart Risk are in their 40s, 50s, and 60s.
+We can also see that are few instances of heart risk in their early 30’s and late 70’s</p>
+</section>
+<section id="sex">
+<h3>Sex<a class="headerlink" href="#sex" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/104d30fd55af4d0ee5b33e81189ae0a8e71033b64d234a942957afdad3123164.png" src="_images/104d30fd55af4d0ee5b33e81189ae0a8e71033b64d234a942957afdad3123164.png" />
+</div>
+</div>
+<p>We can see males have more instances of being at risk than females.
+We can look at this alongside the age range to understand how the distributions changes by age.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/62dd1c21d18faa40401d5dc024ccfae4cf87fd4b702cbfde2e24f8a80f5dd314.png" src="_images/62dd1c21d18faa40401d5dc024ccfae4cf87fd4b702cbfde2e24f8a80f5dd314.png" />
+</div>
+</div>
+<p>Apart from having less instances of male entries from their 70ss and none in their late 20s, most of their entries from
+their late 30’s up until their late 50s, with most female instances at their 60’s.
+From this, we can assume that heart risk is more prominent with those in their early 40’s up until their late 60’s.</p>
+</section>
+<section id="cholesterol">
+<h3>Cholesterol<a class="headerlink" href="#cholesterol" title="Permalink to this heading">#</a></h3>
+<p>To better understand cholesterol levels, we can classify them according to the National Heart, Lung, and Blood Institute guidelines.</p>
+<ul class="simple">
+<li><p>A total cholesterol level of less than 200 mg/dL (5.17 mmol/L) is normal.</p></li>
+<li><p>A total cholesterol level of 200 to 239 mg/dL (5.17 to 6.18 mmol/L) is borderline high.</p></li>
+<li><p>A total cholesterol level of 240 mg/dL (6.21 mmol/L) or greater is high.</p></li>
+</ul>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/29bc0d81abe5dc85993afc1777253722a13e0e860dccff7f378cad55a646e59e.png" src="_images/29bc0d81abe5dc85993afc1777253722a13e0e860dccff7f378cad55a646e59e.png" />
+</div>
+</div>
+<p>As expected, we can see that most of those at risk have high cholesterol. However, we can also see that there is are those with normal cholesterol levels that are at risk for heart disease.</p>
+</section>
+<section id="blood-pressure">
+<h3>Blood Pressure<a class="headerlink" href="#blood-pressure" title="Permalink to this heading">#</a></h3>
+<p>We can compare these findings with blood pressure (systolic). The following categories were recommended by the American Heart Association.
+(Systolic mm Hg (upper number))</p>
+<ul class="simple">
+<li><p>NORMAL - LESS THAN 120</p></li>
+<li><p>ELEVATED	120 – 129</p></li>
+<li><p>HIGH BLOOD PRESSURE (HYPERTENSION) STAGE 1 - 130 – 139</p></li>
+<li><p>HIGH BLOOD PRESSURE (HYPERTENSION) STAGE 2 - 140 OR HIGHER</p></li>
+<li><p>HYPERTENSIVE CRISIS - HIGHER THAN 180</p></li>
+</ul>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/6f81b79fb8da4b46bcc9763133a6d145ff0a9f9fe8327cae0c7000635c5feb8d.png" src="_images/6f81b79fb8da4b46bcc9763133a6d145ff0a9f9fe8327cae0c7000635c5feb8d.png" />
+</div>
+</div>
+<p>We can see that regardless of cholesterol level, blood pressure takes most of the instances of heart disease.
+There are also come cases that even with normal bp and normal cholesterol levels, the risk of heart disease may still be present.</p>
+</section>
 </section>
 </section>
 
@@ -484,20 +647,20 @@ with your book. For more information about this, see <a class="reference externa
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="markdown.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title">Introduction to the Heart Disease Predictor</p>
       </div>
     </a>
     <a class="right-next"
-       href="markdown-notebooks.html"
+       href="methodology.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+        <p class="prev-next-title">Methodology</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -519,9 +682,16 @@ with your book. For more information about this, see <a class="reference externa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-notebooks">Markdown + notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown">MyST markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">Code blocks and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-columns">Feature Columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-column">Target Column</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source">Source</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-example">Dataset Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#age">Age</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sex">Sex</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cholesterol">Cholesterol</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blood-pressure">Blood Pressure</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

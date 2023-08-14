@@ -4,6 +4,9 @@
 format: jb-book
 root: intro
 chapters:
+- file: dataset
+- file: methodology
+- file: docstrings
 - file: markdown
 - file: notebooks
 - file: markdown-notebooks
