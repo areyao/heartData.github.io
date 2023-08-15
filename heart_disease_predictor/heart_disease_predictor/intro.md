@@ -21,7 +21,7 @@ Project Objectives include:
     - Select and optimize the most suitable classification or regression models and enhance the project solution. 
 
 
-5. Model Developement and Evaluation
+5. Model Development and Evaluation
 
     - Develop, evaluate, and validate model. Efficient coding practices, and effective evaluation metrics are expected. 
 
@@ -31,7 +31,7 @@ Project Objectives include:
     - Enhance model interpretability and visualization through interactive charts, SHAP library, Streamlit interface, and a summary dashboard.
 
 
-7. Deployement and Containerization
+7. Deployment and Containerization
 
     - Deploy and containerize the Streamlit web app using Docker.
 

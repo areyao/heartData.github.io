@@ -6,7 +6,9 @@ root: intro
 chapters:
 - file: dataset
 - file: methodology
+- file: streamlit
 - file: docstrings
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+- file: acknowledgements
+#- file: markdown
+#- file: notebooks
+#- file: markdown-notebooks

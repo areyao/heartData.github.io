@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'methodology';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="Streamlit and Deployment" href="streamlit.html" />
     <link rel="prev" title="The Dataset" href="dataset.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -159,13 +159,9 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">The Dataset</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Methodology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docstrings.html">1. configs</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streamlit.html">Streamlit and Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docstrings.html">Doc Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
 </ul>
 
     </div>
@@ -363,6 +359,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-model-selection">ML Model Selection</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#models-w-o-hyperparameter-tuning">Models (W/O hyperparameter tuning)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#models-w-hyperparameter-tuning">Models (W/ hyperparameter tuning)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stacked-ensemble-model">Stacked Ensemble Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stages-of-the-final-predictor">Stages of the Final Predictor</a></li>
 </ul>
 </li>
 </ul>
@@ -380,7 +378,7 @@ document.write(`
 </div>
 <section id="methodology">
 <h1>Methodology<a class="headerlink" href="#methodology" title="Permalink to this heading">#</a></h1>
-<p>Using the following dataset, a classification project was identified to be the most suitable approach. Before testing and evaluating models, data pre-processing and cleaning must first be done.</p>
+<p>Using the following dataset, a <strong>classification</strong> project was identified to be the most suitable approach. Before testing and evaluating models, data pre-processing and cleaning must first be done.</p>
 <section id="preprocessing">
 <h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h2>
 <p>To be able to properly fit the data within the ML model without any issues on the final predictions, pre-processing must be done:</p>
@@ -575,6 +573,101 @@ document.write(`
 </table>
 </div></div></div>
 </div>
+<p>Seeing as the two highest ROC scores from both types of model testing are the Logistic Regression and the RandomForest, these two models became the focus of further testing.</p>
+</section>
+<section id="stacked-ensemble-model">
+<h3>Stacked Ensemble Model<a class="headerlink" href="#stacked-ensemble-model" title="Permalink to this heading">#</a></h3>
+<p>To make sure predictions are maximized, a stacked ensemble model method was used. Upon further testing, the most suitable combination of the two models are :</p>
+<ul class="simple">
+<li><p>Random Forest Classification (Base Model w/o hyperparameter tuning)</p></li>
+<li><p>Logistic Regression Model (Meta-model w/ hyperparameter tuning)</p></li>
+</ul>
+<p>In this case, the results from the random forest classifier will be used as feature inputs into the logistic regression model. <strong>This includes the initial prediction (pred_rf), and the probability (prob_rf) predicting positive or negative class (&gt;0.5 it’s class 1 and if &lt;0.5 it’s labeled class 0).</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Metric</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>Accuracy</td>
+      <td>89.14%</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Precision</td>
+      <td>86.61%</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Recall</td>
+      <td>94.01%</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>F-1</td>
+      <td>90.16%</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>AUC-ROC</td>
+      <td>94.74%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><em>Note that the following metrics were provided with a 70:30 train-test split (fitting and transforming the train set on the RandomForest base model). Further tests with different ratio and splits is highly recommended if replicated.</em></p>
+</section>
+<section id="stages-of-the-final-predictor">
+<h3>Stages of the Final Predictor<a class="headerlink" href="#stages-of-the-final-predictor" title="Permalink to this heading">#</a></h3>
+<p>Since there is a distinction of feature inputs within the two models, pre-processing must also be done separately to ensure that only suitable inputs are passed.</p>
+<ol class="arabic simple">
+<li><p>Pre-processing</p>
+<ul class="simple">
+<li><p>StringIndexer for Categorical columns (appending _index to the originall column names).</p></li>
+<li><p>VectorAssembler for assembling a vector for all features.</p></li>
+<li><p>StandardScaler for normalzing the vector.</p></li>
+</ul>
+</li>
+<li><p>Random Forest Classifier</p>
+<ul class="simple">
+<li><p>Transform the dataset.</p></li>
+<li><p>Extract the prediction and probability columns from the results.</p></li>
+</ul>
+</li>
+<li><p>Meta pre-processing</p>
+<ul class="simple">
+<li><p>VectorAssembler for both prediction and probability columns from previous prediction.</p></li>
+</ul>
+</li>
+<li><p>Logistic Regression</p>
+<ul class="simple">
+<li><p>Transform the dataset.</p></li>
+</ul>
+</li>
+</ol>
+<p>All that’s left to do is to implement the following predictor into a Streamlit Interface.</p>
 </section>
 </section>
 </section>
@@ -620,11 +713,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="markdown.html"
+       href="streamlit.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title">Streamlit and Deployment</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -650,6 +743,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-model-selection">ML Model Selection</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#models-w-o-hyperparameter-tuning">Models (W/O hyperparameter tuning)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#models-w-hyperparameter-tuning">Models (W/ hyperparameter tuning)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stacked-ensemble-model">Stacked Ensemble Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stages-of-the-final-predictor">Stages of the Final Predictor</a></li>
 </ul>
 </li>
 </ul>
